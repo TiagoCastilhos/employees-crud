@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   private _employeesService = inject(EmployeesService);
 
   dataSource = new MatTableDataSource<Employee>([]);
-  displayedColumns: string[] = ['id', 'name', 'active'];
+  displayedColumns: string[] = ['id', 'name', 'role', 'active', 'actions'];
 
   ngOnInit() {
     this._employeesService.getEmployees().subscribe((employees) => {
@@ -25,7 +25,9 @@ export class ListComponent implements OnInit {
 
   }
 
-  addEmployee() {
-
+  deleteEmployee(id: string) {
+    this._employeesService.deleteEmployee(id).subscribe(() => {
+      this.dataSource.data = this.dataSource.data.filter(e => e.id !== id);
+    });
   }
 }

@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateEditComponent } from './components/create-edit/create-edit.component';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatButtonModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    MatIconModule
   ]
 })
 export class EmployeesModule { }

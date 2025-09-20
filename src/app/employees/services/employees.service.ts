@@ -11,11 +11,11 @@ export class EmployeesService {
     private apiUrl = environment.apiUrl;
 
     getEmployees() {
-        return this._http.get<Employee[]>(`${this.apiUrl}/employees`);
+        return this._http.get<Employee[]>(`${this.apiUrl}/employees?_embed=role`);
     }
 
     getEmployee(id: string) {
-        return this._http.get<Employee>(`${this.apiUrl}/employees/${id}`);
+        return this._http.get<Employee>(`${this.apiUrl}/employees/${id}?_embed=role`);
     }
 
     createEmployee(employee: Employee) {
