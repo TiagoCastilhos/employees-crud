@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { List } from './components/list/list';
+import { ListComponent } from './components/list/list.component';
 import { RouterModule } from '@angular/router';
 import { employeesRoutes } from './employees.routes';
-import { Edit } from './components/edit/edit';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreateEditComponent } from './components/create-edit/create-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    List,
-    Edit
+    ListComponent,
+    CreateEditComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(employeesRoutes),
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    FormsModule
   ]
 })
 export class EmployeesModule { }

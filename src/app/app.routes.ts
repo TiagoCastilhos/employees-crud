@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { NotFound } from './core/not-found/not-found';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 // import { NotFoundComponent } from './pages/not-found/not-found.component';
 // import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 // import { AutenticacaoGuard } from './guards/autenticacao.guard';
@@ -7,5 +7,5 @@ import { NotFound } from './core/not-found/not-found';
 export const routes: Routes = [
     { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
     { path: '', redirectTo: 'employees', pathMatch: 'full' },
-    { path: '**', component: NotFound },
+    { path: '**', component: NotFoundComponent },
 ];
