@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+
+.navbar {
+    background-color: var(--mat-sys-primary);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    z-index: 99;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        margin-left: 2rem;
+
+        .nav-item {
+            .nav-link {
+                color: white;
+                font-weight: 500;
+                cursor: pointer;
+                padding: 1em;
+                text-decoration: none;
+            }
+        }
+    }
+}

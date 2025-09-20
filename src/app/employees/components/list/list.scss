@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    padding: 2rem 5rem;
+    height: 100%;
+}
+
+.employees-table {
+    overflow: auto;
+    border: 1px solid var(--mat-sys-outline-variant);
+}
+
+.mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+}
+
+.employees-row-is-clicked {
+    font-weight: bold;
+}

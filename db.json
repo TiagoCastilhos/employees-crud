@@ -1,0 +1,89 @@
+{
+    "employees": [
+        {
+            "id": "1",
+            "name": "John Dev",
+            "email": "john.dev@gmail.com",
+            "currentRole": "1",
+            "active": true
+        },
+        {
+            "id": "2",
+            "name": "John QA",
+            "email": "john.qa@gmail.com",
+            "currentRole": "2",
+            "active": true
+        },
+        {
+            "id": "3",
+            "name": "John PM",
+            "email": "john.pm@gmail.com",
+            "currentRole": "3",
+            "active": false
+        }
+    ],
+    "roles": [
+        {
+            "id": "1",
+            "name": "Software Engineer"
+        },
+        {
+            "id": "2",
+            "name": "QA Engineer"
+        },
+        {
+            "id": "3",
+            "name": "Project Manager"
+        }
+    ],
+    "employeesHistory": [
+        {
+            "id": "1",
+            "employeeId": "1",
+            "roleId": "2",
+            "startDate": "2023-02-10",
+            "endDate": "2024-04-10",
+            "salary": 8000
+        },
+        {
+            "id": "2",
+            "employeeId": "1",
+            "roleId": "1",
+            "startDate": "2024-04-11",
+            "endDate": null,
+            "salary": 10000
+        },
+        {
+            "id": "3",
+            "employeeId": "2",
+            "roleId": "2",
+            "startDate": "2024-04-10",
+            "endDate": null,
+            "salary": 8000
+        },
+        {
+            "id": "4",
+            "employeeId": "3",
+            "roleId": "2",
+            "startDate": "2021-03-07",
+            "endDate": "2023-04-09",
+            "salary": 8000
+        },
+        {
+            "id": "5",
+            "employeeId": "3",
+            "roleId": "1",
+            "startDate": "2023-04-10",
+            "endDate": "2024-04-10",
+            "salary": 10000
+        },
+        {
+            "id": "6",
+            "employeeId": "3",
+            "roleId": "3",
+            "startDate": "2024-04-11",
+            "endDate": "2024-10-10",
+            "salary": 15000
+        }
+    ]
+}
