@@ -7,9 +7,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateEditComponent } from './components/create-edit/create-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { EmployeesService } from './services/employees.service';
+import { RolesService } from './services/roles.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +27,17 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatButtonModule,
     MatDialogModule,
-    FormsModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
+  providers: [
+    EmployeesService,
+    RolesService
   ]
 })
 export class EmployeesModule { }

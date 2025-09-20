@@ -1,6 +1,6 @@
 <div class="container">
     <div>
-        <button matButton="elevated">Add employee</button>
+        <button matButton="elevated" (click)="addEmployee()">Add employee</button>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 employees-table">
         <ng-container matColumnDef="id">

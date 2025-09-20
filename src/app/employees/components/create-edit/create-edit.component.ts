@@ -2,7 +2,8 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EmployeesService } from '../../services/employees.service';
 import { Employee } from '../../models/employee.model';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { RolesService } from '../../services/roles.service';
 
 @Component({
   selector: 'app-create-edit',
@@ -13,9 +14,26 @@ import { FormControl } from '@angular/forms';
 export class CreateEditComponent {
   private _route = inject(ActivatedRoute);
   private _employeesService = inject(EmployeesService);
-  formControl = new FormControl('');
+  private _rolesService = inject(RolesService);
+  private fb = inject(FormBuilder);
 
   employee: Employee | null = null;
+  roles$ = this._rolesService.getRoles();
+
+  protected employeeForm: FormGroup<EmployeeForm> = this.fb.group<EmployeeForm>(
+    {
+      name: this.fb.nonNullable.control<string>(this.employee?.name ?? '', [
+        Validators.required,
+      ]),
+      email: this.fb.nonNullable.control<string>(this.employee?.email ?? '', [
+        Validators.required,
+        Validators.email
+      ]),
+      roleId: this.fb.nonNullable.control<string>(this.employee?.roleId ?? '', [
+        Validators.required
+      ])
+    }
+  );
 
   ngOnInit() {
     this._route.paramMap.subscribe(p => {
@@ -39,4 +57,10 @@ export class CreateEditComponent {
 
     this._employeesService.createEmployee(this.employee!);
   }
+}
+
+export interface EmployeeForm {
+    name: FormControl<string>;
+    email: FormControl<string>;
+    roleId: FormControl<string>;
 }

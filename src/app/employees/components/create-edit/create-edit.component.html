@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
+
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput id="Name" formControlName="name" />
+            <mat-error *ngIf="employeeForm.get('name')?.errors?.['required']">Name is required.</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput id="E-mail" type="email" formControlName="email" />
+            <mat-error *ngIf="employeeForm.get('email')?.errors?.['required']">E-mail is required.</mat-error>
+            <mat-error *ngIf="employeeForm.get('email')?.errors?.['email']">E-mail is invalid.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Role</mat-label>
+            <mat-select placeholder="Select a role" formControlName="roleId">
+                @if (roles$ | async; as roles) {
+                @for (role of roles; track role.id) {
+                <mat-option [value]="role.id">{{role.name}}</mat-option>
+                }
+                }
+            </mat-select>
+            @if (employeeForm.get('roleId')?.errors?.['required']) {
+            <mat-error>Please choose a role</mat-error>
+            }
+        </mat-form-field>
+
+        <div>
+            <button matButton="elevated" type="submit" [disabled]="this.employeeForm.invalid">Create</button>
+        </div>
+    </form>
+</div>

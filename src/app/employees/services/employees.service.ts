@@ -3,9 +3,7 @@ import { inject, Injectable } from "@angular/core";
 import { environment } from "@environments/environment";
 import { Employee } from "../models/employee.model";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EmployeesService {
     private _http = inject(HttpClient);
     private apiUrl = environment.apiUrl;
