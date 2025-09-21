@@ -7,4 +7,5 @@ export interface Employee {
     roleId: string;
     active: boolean;
     role: Role;
+    salary: number;
 }

@@ -29,8 +29,15 @@
             }
         </mat-form-field>
 
+        <mat-form-field>
+            <mat-label>Salary</mat-label>
+            <input matInput id="Salary" type="number" formControlName="salary" />
+            <mat-error *ngIf="employeeForm.get('salary')?.errors?.['required']">Salary is required.</mat-error>
+            <mat-error *ngIf="employeeForm.get('salary')?.errors?.['min']">Salary is invalid.</mat-error>
+        </mat-form-field>
+
         <div>
-            <button matButton="elevated" type="submit" [disabled]="this.employeeForm.invalid">Create</button>
+            <button matButton="elevated" type="submit" [disabled]="this.employeeForm.invalid">{{ employee ? 'Update' : 'Create' }}</button>
         </div>
     </form>
 </div>

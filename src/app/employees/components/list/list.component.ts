@@ -14,8 +14,10 @@ export class ListComponent implements OnInit {
   private _employeesService = inject(EmployeesService);
   private _router = inject(Router);
 
+  //ToDO: Reserach about using observables with mat-table instead of MatTableDataSource.
+  //I tested some approaches but I couldn't make it work.
   dataSource = new MatTableDataSource<Employee>([]);
-  displayedColumns: string[] = ['id', 'name', 'role', 'active', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'role', 'salary', 'active', 'actions'];
 
   ngOnInit() {
     this._employeesService.getEmployees().subscribe((employees) => {

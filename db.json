@@ -5,21 +5,24 @@
             "name": "John Dev",
             "email": "john.dev@gmail.com",
             "roleId": "1",
-            "active": true
+            "active": true,
+            "salary": 10000
         },
         {
             "id": "2",
             "name": "John QA",
             "email": "john.qa@gmail.com",
             "roleId": "2",
-            "active": true
+            "active": true,
+            "salary": 8000
         },
         {
             "id": "3",
             "name": "John PM",
             "email": "john.pm@gmail.com",
             "roleId": "3",
-            "active": false
+            "active": false,
+            "salary": 15000
         }
     ],
     "roles": [
