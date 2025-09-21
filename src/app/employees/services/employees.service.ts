@@ -25,6 +25,8 @@ export class EmployeesService {
     }
 
     deleteEmployee(id: string) {
+        //ToDo: Delete should ideally be a soft delete, just updating the active property to false.
+        //I couldn't find any option to do a soft delete with json-server, so this is actually deleting the json entry.
         return this._http.delete<void>(`${this.apiUrl}/employees/${id}`);
     }
 }
