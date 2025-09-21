@@ -21,6 +21,8 @@ export class EmployeesService {
     }
 
     updateEmployee(id: string, employee: Employee) {
+        //ToDo: It should add an entry to the employee history as well when updating an employee.
+        //Since json server doesn't support transactions, this is not implemented now.
         return this._http.put<Employee>(`${this.apiUrl}/employees/${id}`, employee);
     }
 

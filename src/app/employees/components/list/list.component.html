@@ -37,6 +37,7 @@
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="editEmployee(employee.id)">Edit</button>
                     <button mat-menu-item (click)="deleteEmployee(employee.id)">Delete</button>
+                    <button mat-menu-item (click)="goToHistory(employee.id)">History</button>
                 </mat-menu>
             </td>
         </ng-container>

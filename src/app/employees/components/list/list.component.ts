@@ -38,4 +38,8 @@ export class ListComponent implements OnInit {
   addEmployee() {
     this._router.navigate(['/employees/create']);
   }
+
+  goToHistory(id: string) {
+    this._router.navigate([`/dashboards/employees/${id}`]);
+  }
 }

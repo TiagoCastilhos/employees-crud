@@ -43,50 +43,68 @@
         {
             "id": "1",
             "employeeId": "1",
-            "roleId": "2",
-            "startDate": "2023-02-10",
-            "endDate": "2024-04-10",
-            "salary": 8000
+            "history": [
+                {
+                    "role": "QA Engineer",
+                    "startDate": "2023-02-10",
+                    "endDate": "2024-04-10",
+                    "salary": 8000
+                },
+                {
+                    "role": "Software Engineer",
+                    "startDate": "2024-04-11",
+                    "endDate": null,
+                    "salary": 10000
+                }
+            ]
         },
         {
             "id": "2",
-            "employeeId": "1",
-            "roleId": "1",
-            "startDate": "2024-04-11",
-            "endDate": null,
-            "salary": 10000
+            "employeeId": "2",
+            "history": [
+                {
+                    "role": "QA Engineer",
+                    "startDate": "2021-05-15",
+                    "endDate": "2024-04-09",
+                    "salary": 7000
+                },
+                {
+                    "role": "QA Engineer",
+                    "startDate": "2024-04-10",
+                    "endDate": null,
+                    "salary": 8000
+                }
+            ]
         },
         {
             "id": "3",
-            "employeeId": "2",
-            "roleId": "2",
-            "startDate": "2024-04-10",
-            "endDate": null,
-            "salary": 8000
-        },
-        {
-            "id": "4",
             "employeeId": "3",
-            "roleId": "2",
-            "startDate": "2021-03-07",
-            "endDate": "2023-04-09",
-            "salary": 8000
-        },
-        {
-            "id": "5",
-            "employeeId": "3",
-            "roleId": "1",
-            "startDate": "2023-04-10",
-            "endDate": "2024-04-10",
-            "salary": 10000
-        },
-        {
-            "id": "6",
-            "employeeId": "3",
-            "roleId": "3",
-            "startDate": "2024-04-11",
-            "endDate": "2024-10-10",
-            "salary": 15000
+            "history": [
+                {
+                    "role": "QA Engineer",
+                    "startDate": "2021-03-07",
+                    "endDate": "2022-04-09",
+                    "salary": 8000
+                },
+                {
+                    "role": "QA Engineer",
+                    "startDate": "2022-04-10",
+                    "endDate": "2023-04-09",
+                    "salary": 9000
+                },
+                {
+                    "role": "Software Engineer",
+                    "startDate": "2023-04-10",
+                    "endDate": "2024-04-10",
+                    "salary": 11000
+                },
+                {
+                    "role": "Project Manager",
+                    "startDate": "2024-04-11",
+                    "endDate": "2024-10-10",
+                    "salary": 15000
+                }
+            ]
         }
     ]
 }
