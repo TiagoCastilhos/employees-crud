@@ -1,18 +1,18 @@
 import { Component, ElementRef, inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { EmployeeHistory } from "../../models/employee-history.model";
 import { DashboardsService } from "../../services/dashboards.service";
-import Chart from "chart.js/auto";
+import { EmployeeHistory } from "../../models/employee-history.model";
+import { Chart } from "chart.js/auto";
 
 @Component({
-    selector: 'app-service-time',
-    templateUrl: './service-time.component.html',
-    styleUrl: './service-time.component.scss',
+    selector: 'app-roles-salaries',
+    templateUrl: './roles-salaries.component.html',
+    styleUrl: './roles-salaries.component.scss',
     standalone: false,
 })
-export class ServiceTimeComponent implements OnInit, OnDestroy {
+export class RolesSalariesComponent implements OnInit, OnDestroy {
     private _dashboardsService = inject(DashboardsService);
 
-    @ViewChild('time', { static: true }) chartRef!: ElementRef<HTMLCanvasElement>;
+    @ViewChild('salaries', { static: true }) chartRef!: ElementRef<HTMLCanvasElement>;
     public chart: any;
 
     ngOnInit(): void {
@@ -56,23 +56,19 @@ export class ServiceTimeComponent implements OnInit, OnDestroy {
                     data.set(history.role, []);
                 }
 
-                const startDate = new Date(history.startDate);
-                const endDate = history.endDate ? new Date(history.endDate) : new Date();
-                const serviceTimeInMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
-
-                data.get(history.role)!.push(serviceTimeInMonths);
+                data.get(history.role)!.push(history.salary);
             }
         }
 
-        const averages = Array.from(data.entries()).map(([role, months]) => {
-            const total = months.reduce((acc, month) => acc + month, 0);
-            return { role, average: total / months.length };
+        const averages = Array.from(data.entries()).map(([role, salaries]) => {
+            const total = salaries.reduce((acc, salary) => acc + salary, 0);
+            return { role, average: total / salaries.length };
         });
 
         return {
             labels: averages.map(a => a.role),
             datasets: [{
-                label: 'Average Service time by Role (months)',
+                label: 'Average Salary by Role',
                 data: averages.map(a => a.average),
                 borderWidth: 1
             }]
