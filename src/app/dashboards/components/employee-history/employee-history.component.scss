@@ -1,7 +1,13 @@
-.history-card {
-    width: 70em;
-    padding: 2em;
-    justify-self: center;
-    align-self: center;
-    margin-top: 2em;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+
+    .history-card {
+        width: 70em;
+        padding: 2em;
+        margin-top: 2em;
+    }
 }

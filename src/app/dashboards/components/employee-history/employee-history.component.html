@@ -1,3 +1,15 @@
-<mat-card class="history-card">
-    <canvas #history></canvas>
-</mat-card>
+<div class="container">
+    <mat-card class="history-card">
+        <canvas #history></canvas>
+    </mat-card>
+    <mat-card class="role-updates-card">
+        <mat-card-header>
+            <h3>Role Updates</h3>
+        </mat-card-header>
+        <mat-list role="list">
+            @for (update of roleUpdates; track update) {
+            <mat-list-item role="listitem">{{update}}</mat-list-item>
+            }
+        </mat-list>
+    </mat-card>
+</div>

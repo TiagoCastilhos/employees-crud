@@ -5,6 +5,7 @@ import { dashboardsRoutes } from './dashboards.routes';
 import { EmployeeHistoryComponent } from './components/employee-history/employee-history.component';
 import { DashboardsService } from './services/dashboards.service';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     CommonModule,
     RouterModule.forChild(dashboardsRoutes),
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [
     DashboardsService

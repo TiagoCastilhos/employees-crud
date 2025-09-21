@@ -16,6 +16,7 @@ export class EmployeeHistoryComponent implements OnInit, OnDestroy {
 
     @ViewChild('history', { static: true }) chartRef!: ElementRef<HTMLCanvasElement>;
     public chart: any;
+    public roleUpdates: string[] = [];
 
     ngOnInit() {
         this._activatedRoute.params.subscribe(params => {
@@ -23,6 +24,7 @@ export class EmployeeHistoryComponent implements OnInit, OnDestroy {
             this._dashboardsService.getEmployeeHistory(employeeId)
                 .subscribe(employeeHistory => {
                     this.createChart(employeeHistory);
+                    this.generateRoleUpdates(employeeHistory);
                 });
         });
     }
@@ -55,7 +57,7 @@ export class EmployeeHistoryComponent implements OnInit, OnDestroy {
                 data: labels.map(l => l.salary),
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                tension: 0.2
             }]
         };
     }
@@ -68,5 +70,9 @@ export class EmployeeHistoryComponent implements OnInit, OnDestroy {
                 salary: e.salary
             };
         });
+    }
+
+    private generateRoleUpdates(employeeHistory: EmployeeHistory) {
+        this.roleUpdates = employeeHistory.history.map(e => `${e.startDate} - ${e.role} (${e.reason})`);
     }
 }

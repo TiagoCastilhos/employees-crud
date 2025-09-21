@@ -3,4 +3,5 @@ export interface History {
     startDate: string,
     endDate?: string,
     salary: number,
+    reason: string
 }

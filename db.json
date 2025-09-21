@@ -48,13 +48,15 @@
                     "role": "QA Engineer",
                     "startDate": "2023-02-10",
                     "endDate": "2024-04-10",
-                    "salary": 8000
+                    "salary": 8000,
+                    "reason": "Initial Hire"
                 },
                 {
                     "role": "Software Engineer",
                     "startDate": "2024-04-11",
                     "endDate": null,
-                    "salary": 10000
+                    "salary": 10000,
+                    "reason": "Role Change"
                 }
             ]
         },
@@ -66,13 +68,15 @@
                     "role": "QA Engineer",
                     "startDate": "2021-05-15",
                     "endDate": "2024-04-09",
-                    "salary": 7000
+                    "salary": 7000,
+                    "reason": "Initial Hire"
                 },
                 {
                     "role": "QA Engineer",
                     "startDate": "2024-04-10",
                     "endDate": null,
-                    "salary": 8000
+                    "salary": 8000,
+                    "reason": "Promotion"
                 }
             ]
         },
@@ -84,25 +88,29 @@
                     "role": "QA Engineer",
                     "startDate": "2021-03-07",
                     "endDate": "2022-04-09",
-                    "salary": 8000
+                    "salary": 8000,
+                    "reason": "Initial Hire"
                 },
                 {
                     "role": "QA Engineer",
                     "startDate": "2022-04-10",
                     "endDate": "2023-04-09",
-                    "salary": 9000
+                    "salary": 9000,
+                    "reason": "Promotion"
                 },
                 {
                     "role": "Software Engineer",
                     "startDate": "2023-04-10",
                     "endDate": "2024-04-10",
-                    "salary": 11000
+                    "salary": 11000,
+                    "reason": "Role Change"
                 },
                 {
                     "role": "Project Manager",
                     "startDate": "2024-04-11",
                     "endDate": "2024-10-10",
-                    "salary": 15000
+                    "salary": 15000,
+                    "reason": "Role Change"
                 }
             ]
         }
